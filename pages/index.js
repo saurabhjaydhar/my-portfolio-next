@@ -11,8 +11,6 @@ import {
   Heading,
   Spacer,
   Stack,
-  useColorMode,
-  useColorModeValue,
   useDisclosure,
   Button,
   Input,
@@ -43,11 +41,6 @@ import MobNav from '../components/MobNav';
 import Profile from '../components/Profile';
 
 const index = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const bg = useColorModeValue('blackAlpha.300', 'gray.200');
-  const color = useColorModeValue('white', 'gray.800');
-  var isDarkModeOn = colorMode === 'dark';
-
   const btnRef = React.useRef();
   return (
     <>
