@@ -58,4 +58,4 @@ const Index = () => {
   );
 };
 
-export default index;
+export default Index;

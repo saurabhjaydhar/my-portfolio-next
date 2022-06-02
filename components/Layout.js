@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Box } from '@chakra-ui/react';
+import { Stack, Box, Container } from '@chakra-ui/react';
 import DeskNav from './DeskNav';
 import MobNav from './MobNav';
 import BubbleEffect from './BubbleEffect';
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
           <DeskNav />
           <MobNav />
         </Box>
-        <Box>{children}</Box>
+        <Container>{children}</Container>
       </Stack>
     </div>
   );
