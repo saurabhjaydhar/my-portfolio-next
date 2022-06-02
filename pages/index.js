@@ -40,7 +40,7 @@ import DeskNav from '../components/DeskNav';
 import MobNav from '../components/MobNav';
 import Profile from '../components/Profile';
 
-const index = () => {
+const Index = () => {
   const btnRef = React.useRef();
   return (
     <>

@@ -13,7 +13,6 @@ const DeskNav = () => {
         // justifyContent={'space-around'}
         flexDir={{ base: 'column', md: 'row' }}
         alignItems="flex-start"
-        alignItems={'center'}
         px={10}
         display={{ base: 'none', md: 'flex' }}
       >
@@ -21,7 +20,6 @@ const DeskNav = () => {
         <Link href="/">
           <Text
             cursor={'pointer'}
-            px={5}
             px={5}
             fontSize="md"
             fontWeight="bold"

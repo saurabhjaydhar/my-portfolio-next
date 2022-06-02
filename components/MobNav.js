@@ -26,7 +26,6 @@ const MobNav = () => {
       <Stack
         flexDir={{ base: 'row', md: 'column' }}
         alignItems="flex-start"
-        alignItems={'center'}
         px={10}
         display={{ base: 'flex', md: 'none' }}
       >
@@ -47,10 +46,9 @@ const MobNav = () => {
             <DrawerBody alignContent={'start'} alignItems="center">
               <Box h={20}></Box>
 
-              <Link href={'/'}>
+              <Link href="/">
                 <motion.div whileHover={{ scale: 1.15 }} id="">
                   <Text
-                    px={5}
                     px={5}
                     fontSize="md"
                     fontWeight="bold"
@@ -66,7 +64,6 @@ const MobNav = () => {
 
               <Text
                 px={5}
-                px={5}
                 fontSize="md"
                 fontWeight="bold"
                 textAlign="center"
@@ -76,9 +73,8 @@ const MobNav = () => {
               >
                 Blogs
               </Text>
-              <Link href={'/projects'}>
+              <Link href="/projects">
                 <Text
-                  px={5}
                   px={5}
                   fontSize="md"
                   fontWeight="bold"
