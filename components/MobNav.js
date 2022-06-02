@@ -15,6 +15,7 @@ import { Stack, Box, Text, Button } from '@chakra-ui/react';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+
 const MobNav = () => {
   const btnRef = React.useRef();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -22,7 +23,6 @@ const MobNav = () => {
   var isDarkModeOn = colorMode === 'dark';
   return (
     <div>
-      {' '}
       <Stack
         flexDir={{ base: 'row', md: 'column' }}
         alignItems="flex-start"

@@ -7,7 +7,6 @@ const Social = () => {
   const bg = useColorModeValue('blackAlpha.300', 'gray.200');
   return (
     <>
-      {' '}
       <Text
         mt={8}
         mb={3}

@@ -27,7 +27,7 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 
 // import { getFirestore } from 'firebase/firestore';
 
-const projects = () => {
+const Projects = () => {
   const [projectList, setProjectList] = useState(projectModel);
   const bg = useColorModeValue('blackAlpha.300', 'gray.200');
   // firebase
@@ -109,9 +109,13 @@ const projects = () => {
                 {project.title}
               </Text>
               <Box display={'flex'} justifyContent="center">
-                {project.tech.map((tech) => {
+                {project.tech.map((tech, index) => {
                   return (
-                    <motion.div whileHover={{ scale: 1.1 }} id="imghgt">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      id="imghgt"
+                      key={index}
+                    >
                       <Box
                         mx={5}
                         px={5}
@@ -176,4 +180,4 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default Projects;
