@@ -24,6 +24,7 @@ import {
   getDocs,
 } from '@firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
+import { Wrap, WrapItem } from '@chakra-ui/react';
 
 // import { getFirestore } from 'firebase/firestore';
 
@@ -108,7 +109,8 @@ const Projects = () => {
               >
                 {project.title}
               </Text>
-              <Box display={'flex'} justifyContent="center">
+
+              <Wrap>
                 {project.tech.map((tech, index) => {
                   return (
                     <motion.div
@@ -117,10 +119,10 @@ const Projects = () => {
                       key={index}
                     >
                       <Box
-                        mx={5}
+                        // mx={5}
                         px={5}
                         py={1}
-                        my={5}
+                        // my={5}
                         bg={bg}
                         boxShadow={'2xl'}
                         rounded={'md'}
@@ -141,12 +143,11 @@ const Projects = () => {
                     </motion.div>
                   );
                 })}
-              </Box>
+              </Wrap>
 
-              <motion.div whileHover={{ scale: 1.15 }} id="imghgt">
-                {' '}
+              <motion.div whileHover={{ scale: 1.05 }} id="imghgt">
                 <Image
-                  mr={5}
+                  m={5}
                   // border={'black'}
 
                   // boxSize="100px"

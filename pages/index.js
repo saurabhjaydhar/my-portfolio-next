@@ -36,22 +36,23 @@ import { motion } from 'framer-motion';
 import QuickLink from '../components/QuickLink';
 import Social from '../components/Social';
 import BubbleEffect from '../components/BubbleEffect';
-import DeskNav from '../components/DeskNav';
-import MobNav from '../components/MobNav';
+// import DeskNav from '../components/DeskNav';
+// import MobNav from '../components/MobNav';
 import Profile from '../components/Profile';
 
 const Index = () => {
-  const btnRef = React.useRef();
+  // const btnRef = React.useRef();
   return (
     <>
       <Box
-        alignSelf={'center'}
-        px={{ base: '5', md: '50' }}
-        borderTopRightRadius="full"
+      // bgColor={'gray.100'}
+      // alignSelf={'center'}
+      // mx={'auto'}
+      // px={{ base: '5', md: '50' }}
+      // borderTopRightRadius="full"
       >
         <Profile />
         <QuickLink />
-
         <Social />
       </Box>
     </>
