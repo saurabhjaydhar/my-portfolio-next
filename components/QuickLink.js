@@ -33,7 +33,7 @@ const QuickLink = () => {
       <Wrap>
         {tempArr.map((item, index) => {
           return (
-            <WrapItem>
+            <WrapItem key={index}>
               <motion.div whileHover={{ scale: 1.1 }} id="imghgt">
                 <Box
                   px={5}
