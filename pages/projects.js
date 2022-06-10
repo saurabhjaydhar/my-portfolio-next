@@ -6,10 +6,12 @@ import {
   useColorModeValue,
   Image,
   Button,
+  Center,
 } from '@chakra-ui/react';
 import { projectModel } from '../lib/model/ProjectModel';
 import { motion } from 'framer-motion';
 import projectImage from '../public/wallpaper.png';
+import Link from 'next/link';
 
 // import { firestore } from '../firebase/clientApp';
 // import firebase from 'firebase';
@@ -92,66 +94,71 @@ const Projects = () => {
         </Text>
         {projectList.map((project, index) => {
           return (
-            <Stack mb={5} pb="10" key={index} cursor="pointer">
+            <Stack mb={8} pb="10" key={index} cursor="pointer">
               <Text
                 fontFamily="heading"
                 fontWeight={'bold'}
                 textAlign="center"
-                fontSize={'xl'}
+                fontSize={'2xl'}
               >
-                {project.project_name}
+                {project.title}
               </Text>
               <Text
                 fontFamily="heading"
                 fontWeight={'bold'}
                 textAlign="center"
                 fontSize={'md'}
+                my={3}
               >
-                {project.title}
+                {project.headline}
               </Text>
 
-              <Wrap>
-                {project.tech.map((tech, index) => {
-                  return (
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      id="imghgt"
-                      key={index}
-                    >
-                      <Box
-                        // mx={5}
-                        px={5}
-                        py={1}
-                        // my={5}
-                        bg={bg}
-                        boxShadow={'2xl'}
-                        rounded={'md'}
-                        overflow={'visible'}
-                        // opacity={0.5}
-
-                        alignItems="center"
+              <Center>
+                {' '}
+                <Wrap mx={'auto'} pt={3}>
+                  {project.tech.map((tech, index) => {
+                    return (
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        id="imghgt"
+                        key={index}
                       >
-                        <Text
-                          fontFamily="heading"
-                          fontWeight={'bold'}
-                          textAlign="center"
-                          fontSize={'md'}
+                        <Box
+                          // mx={5}
+                          px={5}
+                          py={1}
+                          // my={5}
+                          bg={bg}
+                          boxShadow={'2xl'}
+                          rounded={'md'}
+                          overflow={'visible'}
+                          // opacity={0.5}
+
+                          alignItems="center"
                         >
-                          #{tech}
-                        </Text>
-                      </Box>
-                    </motion.div>
-                  );
-                })}
-              </Wrap>
+                          <Text
+                            fontFamily="heading"
+                            fontWeight={'bold'}
+                            textAlign="center"
+                            fontSize={'md'}
+                          >
+                            #{tech}
+                          </Text>
+                        </Box>
+                      </motion.div>
+                    );
+                  })}
+                </Wrap>
+              </Center>
 
               <motion.div whileHover={{ scale: 1.05 }} id="imghgt">
                 <Image
                   m={5}
+                  mx={'auto'}
                   // border={'black'}
 
                   // boxSize="100px"
-                  src="https://codingstark.com/_next/image?url=https%3A%2F%2Fik.imagekit.io%2Fcodingstark%2Fproject%2Frefox_RYhbyquYW.webp%3FupdatedAt%3D1632005095578&w=3840&q=75"
+                  src={project.image}
                   alt="Dan Abramov"
                   borderRadius={'lg'}
                 ></Image>
@@ -166,13 +173,15 @@ const Projects = () => {
                 {project.desc}
               </Text>
               <Box h="5"></Box>
-              <Button
-                // leftIcon={<EmailIcon />}
-                colorScheme="teal"
-                variant="solid"
-              >
-                Visit Site
-              </Button>
+              <Link href={project.url !== undefined ? project.url : '/'}>
+                <Button
+                  // leftIcon={<EmailIcon />}
+                  colorScheme="teal"
+                  variant="solid"
+                >
+                  Visit Site
+                </Button>
+              </Link>
             </Stack>
           );
         })}
